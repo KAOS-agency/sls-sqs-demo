@@ -42,7 +42,7 @@ resources:
     SchedulerRole:
       Type: AWS::IAM::Role
       Properties:
-        RoleName: sqs-sls-play-role
+        RoleName: sqs-sls-scheduler-role
         AssumeRolePolicyDocument:
           Version: "2012-10-17"
           Statement:
@@ -52,7 +52,7 @@ resources:
                   - lambda.amazonaws.com
               Action: sts:AssumeRole
         Policies:
-          - PolicyName: sqs-sls-play-policy
+          - PolicyName: sqs-sls-scheduler-policy
             PolicyDocument:
               Version: "2012-10-17"
               Statement:
@@ -78,7 +78,7 @@ resources:
     WorkerRole:
       Type: AWS::IAM::Role
       Properties:
-        RoleName: sqs-sls-play-role
+        RoleName: sqs-sls-worker-role
         AssumeRolePolicyDocument:
           Version: "2012-10-17"
           Statement:
@@ -88,7 +88,7 @@ resources:
                   - lambda.amazonaws.com
               Action: sts:AssumeRole
         Policies:
-          - PolicyName: sqs-sls-play-policy
+          - PolicyName: sqs-sls-worker-policy
             PolicyDocument:
               Version: "2012-10-17"
               Statement:
